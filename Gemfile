@@ -35,6 +35,17 @@ gem 'spring',        group: :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :development, :test do
+	gem 'rspec'
+	gem 'rspec-rails'
+	gem 'byebug', '~> 3.1.2' #debugger not compatible with ruby 2.+, using byebug instead
+end
+
+group :test do
+	gem 'simplecov', :require => false
+	gem 'shoulda-matchers'
+	gem 'factory_girl_rails'
+	gem 'database_cleaner'
+end
+
 
